@@ -89,8 +89,7 @@ async def interaction(interaction: discord.Interaction, prompt: str = None):
                 model=model
             )
             ai_response = chat_completion.choices[0].message.content
-            trimmed = ai_response[:1970]
-            response = f"{interaction.user.mention},\n{trimmed}"
+            response = f"{interaction.user.mention} asked: \"{prompt}\"\n{ai_response}"[:2000]
         else:
             response = f"You haven't asked me anything {interaction.user.mention}."
             
