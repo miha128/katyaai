@@ -16,10 +16,8 @@ command_desc = "Ask the AI a question"
 
 # change with your preferred openai compatible API
 base_url = "http://localhost:1234/v1" # for example, here i used LM Studio's server
-model = "motoreta"
+model = "granite-3.2-8b-instruct"
 api_key = "API key here" # not needed for local LLM, just make sure it's not empty if you're using a local one or leave as default
-
-beforeprompt = f"Today's date: {dt.now().strftime('%B %d %Y')}. You are currently roleplaying as a helpful robot which will respond to a user's query. Keep your answers short. Be clear and concise. The user's query is: "
 
 my_client = discord.Client(intents=discord.Intents.default())
 tree = app_commands.CommandTree(my_client)
@@ -83,7 +81,7 @@ async def interaction(interaction: discord.Interaction, prompt: str = None):
     try:
         if prompt:
             print(f'Query: {prompt} Asked by: {interaction.user.name} Total messages: {message_count}')
-            fullprompt = beforeprompt + prompt
+            fullprompt = f"Today's date: {dt.now().strftime('%B %d %Y')}. You are currently roleplaying as a helpful robot which will respond to a user's query. Keep your answers short. Be clear and concise. The user's query is: " + prompt
             chat_completion = await openai_client.chat.completions.create(
                 messages=[{"role": "user", "content": fullprompt}],
                 model=model
