@@ -1,5 +1,8 @@
 # Source code for KatyaAI, a multipurpose discord bot with llm support, cobalt.tools api and text functions
 
+![image](https://github.com/user-attachments/assets/61a5890f-e7d7-4f51-95c4-74f397ca79c1)
+
+
 > how do i run this??
 
 you have to install the deps with pip (or your distribution's package manager)
