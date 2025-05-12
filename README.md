@@ -15,3 +15,4 @@ then, fill in your discord bot's token from the [discord developer portal](https
 > this code sucks
 
 well yea do u think i care about it being unorganized??? no but it works
+Hei
