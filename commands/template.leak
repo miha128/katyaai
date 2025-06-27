@@ -1,0 +1,23 @@
+import discord
+from discord import app_commands
+import yaml
+from utils import get_command_modules
+
+with open("config.yaml", "r") as f:
+    config = yaml.safe_load(f)
+
+# config["owner_ids"] = [int(i) for i in config.get("owner_ids", [])]
+
+
+async def setup(bot):
+    @tree.command(name="template", description="template")
+    @app_commands.describe(example="leaktok")
+    @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
+    async def function(interaction: discord.Interaction, example: str):
+        try:
+                await interaction.followup.send(
+                    f"dosomething(example)",
+                )
+        except Exception as e:
+            await interaction.followup.send(f"An error occurred: {str(e)}")
+    bot.tree.add_command(function)
