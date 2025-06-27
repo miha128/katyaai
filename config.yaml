@@ -1,0 +1,11 @@
+token: "Token here, keep the quotes"
+ffprofile: 'firefox profile path here, again, keep the quotes'
+openai:
+  api_key: "YOUR_API_KEY"
+  base_url: "http://127.0.0.1:1234/v1" 
+  model: "qwen/qwen3-4b"
+  system_message: "You are a helpful bot currently roleplaying in a Discord online chatroom. Keep your answers clear and concise. Optimize for brevity."
+#guild_id: GuildId  # Optional, faster command sync for a guild instead of user installable commands
+owner_ids:
+  - ""  # Your Discord ID
+  - ""  # Another owner's ID
