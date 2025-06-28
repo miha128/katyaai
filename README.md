@@ -1,4 +1,4 @@
-# KatyaAI is a (very) multipurpose discord bot with text functions, LLM functions and downloading functions, supporting custom and modular app commands (Apps soon :3).
+# KatyaAI
 
 ### Getting started with Katya
 
